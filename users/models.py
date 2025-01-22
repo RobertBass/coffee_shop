@@ -5,3 +5,5 @@ class User(models.Model):
     email = models.EmailField(verbose_name="email")
     password = models.CharField(max_length=200, verbose_name="contraseña")
     
+    def __str__(self):
+        return self.username

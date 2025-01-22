@@ -5,7 +5,7 @@ from users.models import User
 class UserForm(forms.Form):
     username = forms.CharField(max_length=200, label="Nombre de usuario")
     email = forms.EmailField(label="Email")
-    password = forms.CharField(max_length=200, label="Contraseña")
+    password = forms.CharField(widget=forms.PasswordInput(), label="Contraseña")
     
     def save(self):
         User.objects.create(

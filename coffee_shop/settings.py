@@ -87,14 +87,7 @@ WSGI_APPLICATION = 'coffee_shop.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str("DB_NAME"),
-        #'USER':  config('DB_USER'),
-        #'PASSWORD': env.str("DB_PASSWORD"),
-        #'HOST': env.str("DB_HOST"),
-        #'PORT': config('DB_PORT'),
-    }
+    'default': env.db('DATABASE_URL')
 }
 
 
